@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <!--
+      
+            WC4 Team Project
+            Authors: Emma Middleton, Joshua Knutson, Mobin Syed, Johan Elder
+            Date: March 3, 2022
+
+        -->
+        <!-- Metadata -->
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="Saucy Frites makes classic fast food updated for modern 
+            tastes with only the freshest ingredients." />
+        <meta name="keywords" content="fries, poutine, vegan, burgers, fresh, foodie, fastfood" />  
+        <title>Home</title>
+
+        <!-- Fonts -->
+        <link rel="preconnect" href="https://fonts.googleapis.com"> 
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
+        <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Lato:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+        
+        <!-- Style Sheets -->
+        <link href="../styles/reset.css" type="text/css" rel="stylesheet">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+        <link href="../styles/styles.css" type="text/css" rel="stylesheet">
+        
+        <!-- Scripts -->
+        <script src="../scripts/weather.js" defer></script>
+        <script src="../scripts/countdown.js"></script>
+        <script>
+            window.addEventListener('load', setInterval('eventClock()', 1000));
+        </script>
+
+    </head>
+    
+    <body>
+        <!-- Banner -->
+        <section id="banner">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6">
+                        <img src="../images/saucyfrites_white.png" id="logo" alt="saucy fries logo image">
+                    </div>
+                    <div class="col-md-6">
+                        <!-- Weather API AJAX/JQUERY-->
+                        <div id="Weather">
+                            <div class="weathercard">
+                                <div class="weather loading">
+                                    <h2 class="city">Montreal</h2>
+                                    <h2 class="temp">°C</h2>
+                                    <div class="flex">
+                                        <img src="https://openweathermap.org/img/wn/04n.png" alt="" class="icon" />
+                                        <div class="description"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12 mx-auto">
+                        <div id="Event">
+                            <div class="eventcard">
+                                    <form id="clockform" name="clockform" action="#" >
+                                        <div id="countdown">
+                                            <p> Countdown to new Rosemont location opening!
+                                                <input type="text" size="2" id="txtDaysLeft" name="txtDaysLeft" class="bannerclock"/> Days
+                                                <input type="text" size="2" id="txtHrLeft" name="txtHrLeft" class="bannerclock"/> Hours
+                                                <input type="text" size="2" id="txtMinLeft" name="txtMinLeft" class="bannerclock"/> Minutes
+                                                <input type="text" size="2" id="txtSecLeft" name="txtSecLeft" class="bannerclock"/> Seconds!
+                                            </p>
+                                        </div>
+                                    </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Navbar -->
+        <nav class="navbar navbar-expand-md navbar-light">
+            <button class="navbar-toggler mx-auto" type="button" data-toggle="collapse" data-target="#links" id="toggler">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="links">
+                <div class="container navbar-nav">
+                    <a href="../en/index.html" class="nav-item nav-link">Home</a>
+                    <a href="../en/about.html" class="nav-item nav-link">About Us</a>
+                    <a href="../en/menu.html" class="nav-item nav-link">Menu</a>
+                    <a href="../en/specials.html" class="nav-item nav-link">Specials</a>
+                    <a href="../en/contact.html" class="nav-item nav-link">Contact Us</a>
+                    <a href="../en/order.html" class="nav-item nav-link currentpage">Order</a>
+                    <a href="../fr/commande.html" class="nav-item nav-link ml-md-auto"><u>EN</u>/FR</a>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Content -->
+        <div class="container content">
+            <div class="row">
+                <div class="col">
+                    <h1>Order Online</h1>
+                </div>
+            </div>
+            <div class="card px-0 menucard">
+                <div class="card-header">
+                    <ul class="nav nav-tabs card-header-tabs" id="order-menu" role="tablist">
+                        <li class="nav-item">
+                            <a class="nav-link active" id="poutine-tab" data-toggle="tab" href="#poutines" role="tab" aria-controls="poutines" aria-selected="true">Poutines</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" id="burger-tab" data-toggle="tab" href="#burgers" role="tab" aria-controls="burgers" aria-selected="false">Burgers</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" id="hotdog-tab" data-toggle="tab" href="#hotdogs" role="tab" aria-controls="hotdogs" aria-selected="false">Hot Dogs</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" id="drink-tab" data-toggle="tab" href="#drinks" role="tab" aria-controls="drinks" aria-selected="false">Drinks</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" id="sides-tab" data-toggle="tab" href="#sides" role="tab" aria-controls="sides" aria-selected="false">Sides</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="tab-content" id="menuContent">
+                    <div class="tab-pane fade show active" id="poutines" role="tabpanel" aria-labelledby="poutine-tab">
+                        <div class="card m-3 menucard" data-sf-name="Classic Poutine" data-sf-price="6">
+                            <div class="card-body">
+                                <h5 class="card-title">Classic Poutine $6</h5>
+                                <p class="card-text">Fries, gravy and cheese curds. Simple, classic yet delicious. 
+                                    Comes with a soft drink.</p>
+                                <input type="checkbox" id="classicpoutine" name="classicpoutine">
+                                <label for="classicpoutine">Add six chicken nuggets for $3</label>
+                                <div class="row mt-3">
+                                    <button class="foodbutton ml-auto mr-3">Add to cart</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card m-3 menucard" data-sf-name="Bacon Poutine" data-sf-price="8">
+                            <div class="card-body">
+                                <h5 class="card-title">Bacon Poutine $8</h5>
+                                <p class="card-text">Fries, gravy and cheese curds. Sprinkled with bacon bits. Comes 
+                                    with a soft drink.</p>
+                                <input type="checkbox" id="baconpoutine" name="baconpoutine">
+                                <label for="baconpoutine">Add six chicken nuggets for $3</label>
+                                <div class="row mt-3">
+                                    <button class="foodbutton ml-auto mr-3">Add to cart</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card m-3 menucard" data-sf-name="Smoked Meat Poutine" data-sf-price="10">
+                            <div class="card-body">
+                                <h5 class="card-title">Smoked Meat Poutine $10</h5>
+                                <p class="card-text">Fries, gravy, cheese curds. Topped off with delicious slices of 
+                                    Montreal smoked meat. Comes with a soft drink.</p>
+                                <input type="checkbox" id="smpoutine" name="smpoutine">
+                                <label for="smpoutine">Add six chicken nuggets for $3</label>
+                                <div class="row mt-3">
+                                    <button class="foodbutton ml-auto mr-3">Add to cart</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card m-3 menucard" data-sf-name="Meat Lovers Poutine" data-sf-price="12">
+                            <div class="card-body">
+                                <h5 class="card-title">Meat Lovers Poutine $12</h5>
+                                <p class="card-text">Fries, gravy, cheese curds. Topped off with delicious slices of 
+                                    smoked meat, spicy sausage and bacon bits. Comes with a soft drink.</p>
+                                <input type="checkbox" id="mlpoutine" name="mlpoutine">
+                                <label for="mlpoutine">Add six chicken nuggets for $3</label>
+                                <div class="row mt-3">
+                                    <button class="foodbutton ml-auto mr-3">Add to cart</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card m-3 menucard" data-sf-name="Vegan Poutine" data-sf-price="12">
+                            <div class="card-body">
+                                <h5 class="card-title">Vegan Poutine $12</h5>
+                                <p class="card-text">Fries, Vegan gravy, Vegan cheese curds. Comes with a soft drink.</p>
+                                <input type="checkbox" id="veganpoutine" name="veganpoutine">
+                                <label for="veganpoutine">Add six vegan chicken nuggets for $4</label>
+                                <div class="row mt-3">
+                                    <button class="foodbutton ml-auto mr-3">Add to cart</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-pane fade" id="burgers" role="tabpanel" aria-labelledby="burger-tab">
+                        <div class="card m-3 menucard" data-sf-name="Cheese Burger" data-sf-price="9">
+                            <div class="card-body">
+                                <h5 class="card-title">Cheese Burger $9</h5>
+                                <p class="card-text">Old fashioned and classic staple cheese burger. Comes with a choice 
+                                    of fries or salad and a soft drink.</p>
+                                <input type="checkbox" id="cheeseburger" name="cheeseburger">
+                                <label for="cheeseburger">Substitute fries for a poutine for an extra $2</label>
+                                <div class="row mt-3">
+                                    <button class="foodbutton ml-auto mr-3">Add to cart</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card m-3 menucard" data-sf-name="Chili Burger" data-sf-price="10">
+                            <div class="card-body">
+                                <h5 class="card-title">Chili Burger $10</h5>
+                                <p class="card-text">This scrumptious burger sits under a chili spiced lamb patty, 
+                                    roasted bell pepper dip, onions, tomatoes and lettuce. Comes with a choice of fries 
+                                    or salad and a soft drink.</p>
+                                <input type="checkbox" id="chiliburger" name="chiliburger">
+                                <label for="chiliburger">Substitute fries for a poutine for an extra $2</label>
+                                <div class="row mt-3">
+                                    <button class="foodbutton ml-auto mr-3">Add to cart</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card m-3 menucard" data-sf-name="Chicken Burger" data-sf-price="8">
+                            <div class="card-body">
+                                <h5 class="card-title">Chicken Burger $8</h5>
+                                <p class="card-text">Deep fried chicken patty served on a brioche bun with spicy mayo. 
+                                    Comes with a choice of fries or salad and a soft drink.</p>
+                                <input type="checkbox" id="chickenburger" name="chickenburger">
+                                <label for="chickenburger">Substitute fries for a poutine for an extra $2</label>
+                                <div class="row mt-3">
+                                    <button class="foodbutton ml-auto mr-3">Add to cart</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card m-3 menucard" data-sf-name="Supreme Veggie Burger" data-sf-price="8">
+                            <div class="card-body">
+                                <h5 class="card-title">Supreme Veggie Burger $8</h5>
+                                <p class="card-text">Tightly packed in a bun, even vegetables light up. Spiced to 
+                                    perfection, our beans and cauliflower patty is truly a vegetarian delight. Comes 
+                                    with a choice of fries or salad and a soft drink.</p>
+                                <input type="checkbox" id="veggieburger" name="veggieburger">
+                                <label for="veggieburger">Substitute fries for a poutine for an extra $2</label>
+                                <div class="row mt-3">
+                                    <button class="foodbutton ml-auto mr-3">Add to cart</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-pane fade" id="hotdogs" role="tabpanel" aria-labelledby="hotdog-tab">
+                        <div class="card m-3 menucard" data-sf-name="Steamed Hot Dog" data-sf-price="2">
+                            <div class="card-body">
+                                <h5 class="card-title">Steamed Bun Hot Dog $2</h5>
+                                <p class="card-text">Classic Beef hot dog on a steamed bun.</p>
+                                <div class="row mt-3">
+                                    <button class="foodbutton ml-auto mr-3">Add to cart</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card m-3 menucard" data-sf-name="Grilled Hot Dog" data-sf-price="2">
+                            <div class="card-body">
+                                <h5 class="card-title">Grilled Bun Hot Dog $2</h5>
+                                <p class="card-text">Classic Beef hot dog on a grilled bun.</p>
+                                <div class="row mt-3">
+                                    <button class="foodbutton ml-auto mr-3">Add to cart</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-pane fade" id="drinks" role="tabpanel" aria-labelledby="drink-tab">
+                        <div class="card m-3 menucard" data-sf-name="Soft Drink" data-sf-price="1">
+                            <div class="card-body">
+                                <h5 class="card-title">Soft Drink (Coke, Pepsi, 7UP)</h5>
+                                <div class="row mt-3">
+                                    <button class="foodbutton ml-auto mr-3">Add to cart</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card m-3 menucard" data-sf-name="Bottled Water" data-sf-price="1">
+                            <div class="card-body">
+                                <h5 class="card-title">Bottled Water</h5>
+                                <div class="row mt-3">
+                                    <button class="foodbutton ml-auto mr-3">Add to cart</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card m-3 menucard" data-sf-name="Orange Juice" data-sf-price="1">
+                            <div class="card-body">
+                                <h5 class="card-title">Orange Juice</h5>
+                                <div class="row mt-3">
+                                    <button class="foodbutton ml-auto mr-3">Add to cart</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-pane fade" id="sides" role="tabpanel" aria-labelledby="sides-tab">
+                        <div class="card m-3 menucard" data-sf-name="Fries" data-sf-price="2">
+                            <div class="card-body">
+                                <h5 class="card-title">Fries</h5>
+                                <div class="row mt-3">
+                                    <button class="foodbutton ml-auto mr-3">Add to cart</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card m-3 menucard" data-sf-name="Onion Rings" data-sf-price="2">
+                            <div class="card-body">
+                                <h5 class="card-title">Onion Rings</h5>
+                                <div class="row mt-3">
+                                    <button class="foodbutton ml-auto mr-3">Add to cart</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card m-3 menucard" data-sf-name="Cheese Sticks" data-sf-price="2">
+                            <div class="card-body">
+                                <h5 class="card-title">Cheese Sticks</h5>
+                                <div class="row mt-3">
+                                    <button class="foodbutton ml-auto mr-3">Add to cart</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="card menucard" id="cart">
+                <h5 class="card-header" id="cart-header">Your Cart</h5>
+                <div class="card-body" id="cartitems">
+                    <div class="row">
+                        <div class="col-2">
+                            <img src="../images/cart.png" alt="a shopping cart" id="shoppingcart">
+                        </div>
+                        <div class="col-10">
+                            <table class="ml-auto" id="pagecart">
+                            </table>
+                        </div>
+                    </div>
+                    <div class="row"><button class="orderbutton ml-auto mr-3 mt-3">Order Now</button></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <section id="footer">
+            <div class="container">
+                <div class="row align-items-center justify-content-center">
+                    <div class="col-md-3 mb-5 mb-md-0">
+                        <h4>Saucy Frites</h4>
+                        <p id="address">
+                            1234 rue Spud<br>
+                            Montreal, QC<br>
+                            P0T 4T0<br><br>
+                            (514) 728-2972
+                        </p>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="mapouter">
+                            <div class="gmap_canvas">
+                                <iframe 
+                                    width="350" height="250" id="gmap_canvas" 
+                                    src="https://maps.google.com/maps?q=379%20Duluth%20Ave%20E&t=&z=13&ie=UTF8&iwloc=&output=embed" 
+                                    frameborder="0" scrolling="no" marginheight="0" marginwidth="0">
+                                </iframe><a href="https://putlocker-is.org"></a><br>
+                                <style>.mapouter{position:relative;text-align:right;height:250px;width:350px;}</style>
+                                <a href="https://www.embedgooglemap.net">map iframe</a>
+                                <style>.gmap_canvas {overflow:hidden;background:none!important;height:250px;width:350px;}</style>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <p id="copyright">&copy; Saucy Frites 2021 - All Rights Reserved</p>
+
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+        <script src="../scripts/order.js"></script>
+
+        <script>
+            $("#cart").hide();
+        </script>
+    </body>
+</html>

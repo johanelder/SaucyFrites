@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <!--
+      
+            WC4 Team Project
+            Authors: Emma Middleton, Joshua Knutson, Mobin Syed, Johan Elder
+            Date: March 3, 2022
+
+        -->
+        <!-- Metadata -->
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="Saucy Frites makes classic fast food updated for modern 
+            tastes with only the freshest ingredients." />
+        <meta name="keywords" content="fries, poutine, vegan, burgers, fresh, foodie, fastfood" />  
+        <title>Home</title>
+
+        <!-- Fonts -->
+        <link rel="preconnect" href="https://fonts.googleapis.com"> 
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
+        <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Lato:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+        
+        <!-- Style Sheets -->
+        <link href="../styles/reset.css" type="text/css" rel="stylesheet">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+        <link href="../styles/styles.css" type="text/css" rel="stylesheet">
+
+        <!-- Scripts -->
+        <script src="../scripts/weather.js" defer></script>
+        <script src="../scripts/countdown.js"></script>
+        <script>
+            window.addEventListener('load', setInterval('eventClock()', 1000));
+        </script>
+        
+    </head>
+    
+    <body>
+        <!-- Banner -->
+        <section id="banner">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6">
+                        <img src="../images/saucyfrites_white.png" id="logo" alt="saucy fries logo image">
+                    </div>
+                    <div class="col-md-6">
+                        <!-- Weather API AJAX/JQUERY-->
+                        <div id="Weather">
+                            <div class="weathercard">
+                                <div class="weather loading">
+                                    <h2 class="city">Montreal</h2>
+                                    <h2 class="temp">°C</h2>
+                                    <div class="flex">
+                                        <img src="https://openweathermap.org/img/wn/04n.png" alt="" class="icon" />
+                                        <div class="description"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12 mx-auto">
+                        <div id="Event">
+                            <div class="eventcard">
+                                    <form id="clockform" name="clockform" action="#" >
+                                        <div id="countdown">
+                                            <p> Countdown to new Rosemont location opening!
+                                                <input type="text" size="2" id="txtDaysLeft" name="txtDaysLeft" class="bannerclock"/> Days
+                                                <input type="text" size="2" id="txtHrLeft" name="txtHrLeft" class="bannerclock"/> Hours
+                                                <input type="text" size="2" id="txtMinLeft" name="txtMinLeft" class="bannerclock"/> Minutes
+                                                <input type="text" size="2" id="txtSecLeft" name="txtSecLeft" class="bannerclock"/> Seconds!
+                                            </p>
+                                        </div>
+                                    </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Navbar -->
+        <nav class="navbar navbar-expand-md navbar-light">
+            <button class="navbar-toggler mx-auto" type="button" data-toggle="collapse" data-target="#links" id="toggler">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="links">
+                <div class="container navbar-nav">
+                    <a href="../en/index.html" class="nav-item nav-link">Home</a>
+                    <a href="../en/about.html" class="nav-item nav-link">About Us</a>
+                    <a href="../en/menu.html" class="nav-item nav-link currentpage">Menu</a>
+                    <a href="../en/specials.html" class="nav-item nav-link">Specials</a>
+                    <a href="../en/contact.html" class="nav-item nav-link">Contact Us</a>
+                    <a href="../en/order.html" class="nav-item nav-link">Order</a>
+                    <a href="../fr/menu.html" class="nav-item nav-link ml-md-auto"><u>EN</u>/FR</a>
+                </div>
+            </div>
+        </nav>
+        
+        <!-- Content -->
+        <div class="container content">
+            <!-- Menu -->
+            <h1> Menu</h1>
+            <hr>
+        
+            <div class="row">
+                <div class="col-md-6 px-4 pb-4 pb-md-0">
+                     <!-- Poutines -->
+                    <h2>Poutines</h2>
+                    <ul>
+                        <li><b class="foodtitle">Classic Poutine 6$</b></li>
+                            <li>Fries, gravy and cheese curds. Simple, classic yet delicious. Comes with a soft drink.</li>
+                            <li style="text-decoration: underline;" class="menuAddOn">Add 6 chicken nuggets for 3$</li>
+                    </ul>
+                    
+                    <ul class="menuSpacing">
+                        <li><b class="foodtitle">Bacon Poutine 8$</b></li>
+                            <li>Fries, gravy and cheese curds. Sprinkled with bacon bits. Comes with a soft drink.</li>
+                            <li style="text-decoration: underline;" class="menuAddOn">Add 6 chicken nuggets for 3$</li>
+                    </ul>    
+
+                    <ul class="menuSpacing">
+                        <li><b class="foodtitle">Smoked Meat Poutine 10$</b></li>
+                            <li>Fries, gravy, cheese curds. Topped off with delicious slices of Montreal smoked meat. Comes with a soft drink.</li>
+                            <li style="text-decoration: underline;" class="menuAddOn">Add 6 chicken nuggets for 3$</li>
+                    </ul>    
+                        
+                    <ul class="menuSpacing">
+                        <li><b class="foodtitle">Meat Lovers Poutine 12$</b></li>
+                            <li>Fries, gravy, cheese curds. Topped off with delicious slices of smoked meat, spicy sausage and bacon bits. 
+                                Comes with a soft drink.</li>
+                            <li style="text-decoration: underline;" class="menuAddOn">Add 6 chicken nuggets for 3$</li>
+                    </ul>   
+                        
+                    <ul class="menuSpacing">
+                        <li><b class="foodtitle">Vegan Poutine 12$</b></li>
+                            <li>Fries, Vegan gravy, Vegan cheese curds. 
+                                Comes with a soft drink.</li>
+                            <li style="text-decoration: underline;" class="menuAddOn">Add 6 vegan chicken nuggets for 4$</li>
+                        
+                    </ul>
+
+                    <!-- Hot Dogs -->
+                    <h2>Hot Dogs</h2> 
+                    <ul>
+                        <li><b class="foodtitle">Steamed Bun Hot Dog 2$</b></li>
+                            <li>Classic Beef hot dog on a steamed bun</li>
+                            <li style="text-decoration: underline;" class="menuAddOn"> Choice of toppings: Relish, Glazed Onions, Coleslaw,Jalapeno and/or Chili</li>
+                            <li style="text-decoration: underline;" class="menuAddOn">Premium Toppings: Roasted Garlic + Bruschetta, 
+                                Baked Beans + Crumbled Bacon or Mozzarella + Mini Pepp(50c per topping)</li>
+                    </ul>     
+                        
+                    <ul class="menuSpacing">
+                        <li><b class="foodtitle">Grilled Bun Hot Dog 2$</b></li>
+                            <li>Classic Beef hot dog on a grilled bun</li>
+                            <li style="text-decoration: underline;" class="menuAddOn"> Choice of toppings: Relish, Glazed Onions, Coleslaw,Jalapeno and/or Chili</li>
+                            <li style="text-decoration: underline;" class="menuAddOn">Premium Toppings: Roasted Garlic + Bruschetta, 
+                                Baked Beans + Crumbled Bacon or Mozzarella + Mini Pepp(50c per topping)</li>
+                        
+                    </ul> 
+                </div>
+
+                <div class="col-md-6 menuright px-4 pb-4 pb-md-0">
+                    <!-- Burgers -->
+                    <h2>Burgers</h2>
+                    <ul>
+                        <li><b class="foodtitle">Cheese Burger 9$</b></li>
+                            <li>Old fashioned and classic staple cheese burger. Comes with a choice of fries or salad and a soft drink.</li>
+                            <li style="text-decoration: underline;" class="menuAddOn">Substitute fries for a poutine for an extra 2$</li>
+                    </ul>    
+                        
+                    <ul class="menuSpacing">
+                        <li><b class="foodtitle">Chili Burger 10$</b></li>
+                            <li>This scrumptious burger sits under a chili spiced lamb patty, roasted bell pepper dip, onions, tomatoes and lettuce. 
+                                Comes with a choice of fries or salad and a soft drink.</li>
+                            <li style="text-decoration: underline;" class="menuAddOn">Substitute fries for a poutine for an extra 2$</li>
+                    </ul>   
+                        
+                    <ul class="menuSpacing">
+                        <li><b class="foodtitle">Chicken Burger 8$</b></li>
+                            <li>Deep fried chicken patty served on a brioche bun with spicy mayo. Comes with a choice of fries or salad 
+                                and a soft drink.</li>
+                            <li style="text-decoration: underline;" class="menuAddOn">Substitute fries for a poutine for an extra 2$</li>
+                    </ul>   
+                        
+                    <ul class="menuSpacing">
+                        <li><b class="foodtitle">Supreme Veggie Burger 8$</b></li>
+                            <li>Tightly packed in a bun, even vegetables light up. Spiced to perfection, our beans and cauliflower 
+                                patty is truly a vegetarian delight. Comes with a choice of fries or salad and a soft drink.</li>
+                            <li style="text-decoration: underline;" class="menuAddOn">Substitute fries for a poutine for an extra 2$</li>
+                        
+                    </ul>
+
+                    <section class="mt-md-5 pt-md-4">
+                        <!-- Drinks -->
+                        <h2>Drinks</h2>
+                        <ul>
+                            <li>Softs Drinks(Coke,Pepsi,7up..) 1$</li>
+                            <li>Bottle of Water 1$</li>
+                            <li>Orange Juice 1$</li>
+                        </ul>
+                    
+                        <!-- Sides -->
+                        <h2>Sides</h2>
+                        <ul>
+                            <li>Fries 2$</li>
+                            <li>Onion Rings 2$</li>
+                            <li>Cheese Sticks 2$</li>
+                        </ul>
+                    </section>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <section id="footer">
+            <div class="container">
+                <div class="row align-items-center justify-content-center">
+                    <div class="col-md-3 mb-5 mb-md-0">
+                        <h4>Saucy Frites</h4>
+                        <p id="address">
+                            1234 rue Spud<br>
+                            Montreal, QC<br>
+                            P0T 4T0<br><br>
+                            (514) 728-2972
+                        </p>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="mapouter">
+                            <div class="gmap_canvas">
+                                <iframe 
+                                    width="350" height="250" id="gmap_canvas" 
+                                    src="https://maps.google.com/maps?q=379%20Duluth%20Ave%20E&t=&z=13&ie=UTF8&iwloc=&output=embed" 
+                                    frameborder="0" scrolling="no" marginheight="0" marginwidth="0">
+                                </iframe><a href="https://putlocker-is.org"></a><br>
+                                <style>.mapouter{position:relative;text-align:right;height:250px;width:350px;}</style>
+                                <a href="https://www.embedgooglemap.net">map iframe</a>
+                                <style>.gmap_canvas {overflow:hidden;background:none!important;height:250px;width:350px;}</style>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <p id="copyright">&copy; Saucy Frites 2021 - All Rights Reserved</p>
+
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+    </body>
+</html>

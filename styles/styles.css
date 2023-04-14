@@ -1,0 +1,267 @@
+/*  WC4 Team Project
+    Authors: Emma Middleton, Joshua Knutson, Mobin Syed, Johan Elder
+    Date: March 3, 2022
+*/
+
+body {
+    font-family: 'Lato', sans-serif;
+}
+
+#logo {
+    width: 130px;
+    height: auto;
+    margin: 40px;
+}
+
+#banner {
+    background-color: rgb(34,29,23);
+}
+
+#navbar {
+    background-color: rgb(255, 223, 109);
+}
+
+#footer {
+    background-color: rgb(34,29,23);
+    padding-top: 60px;
+    padding-bottom: 60px;
+}
+
+h1 {
+    font-family: 'Bebas Neue', cursive;
+    font-size: 24pt;
+    margin-bottom: 40px;
+    padding: 5px 10px 0px 10px;
+    display: inline-block;
+    border: 3px solid rgb(34,29,23);
+}
+
+h2 {
+    font-family: 'Bebas Neue', cursive;
+    font-size: 20pt;
+    margin-top: 40px;
+    margin-bottom: 15px;
+    padding: 5px 10px 0px 10px;
+    display: inline-block;
+    border: 3px solid rgb(34,29,23);
+}
+
+h3 {
+    font-family: 'Bebas Neue', cursive;
+    font-weight: bold;
+    font-size: 14pt;
+}
+
+h4 {
+    font-family: 'Bebas Neue', cursive;
+    font-size: 24pt;
+    font-weight: bold;
+    color: white;
+}
+
+h5 {
+    font-family: 'Bebas Neue', cursive;
+    font-size: 18pt;
+}
+
+.foodtitle {
+    font-family: 'Bebas Neue', cursive;
+    font-weight: bold;
+    font-size: 14pt;
+}
+
+.menuSpacing {
+    padding-top: 16px;
+}
+
+.menuAddOn {
+    padding-top: 8px;
+}
+
+.content {
+    margin-top: 40px;
+    margin-bottom: 60px;
+}
+
+.menuright {
+    background-color: rgb(255, 223, 109);
+}
+
+nav.navbar.navbar-expand-md.navbar-light {
+    background-color: rgb(255, 223, 109);
+    padding: 0px;
+}
+
+nav #toggler span {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(34,29,23, 1)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
+}
+  
+#toggler {
+    border: none;
+} 
+
+nav #links a {
+    font-weight: bold;
+    text-decoration: none;
+    color: rgb(34,29,23);
+    padding: 10px 15px 10px 15px;
+}
+
+nav a:visited {
+    color: inherit;
+}
+
+nav #links a.currentpage {
+    background-color: rgb(34,29,23);
+    color: white;
+}
+
+nav #links a:hover {
+    background-color: rgb(34,29,23);
+    color: white;
+}
+
+#address {
+    color: white;
+}
+
+#copyright {
+    font-style: italic;
+    text-align: center;
+    margin: 50px 0px;
+}
+
+#weather {
+    display: flex;
+    justify-content:right;
+    align-items: end;
+    height: 100vh;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 10%;
+}
+
+.weathercard {
+    background: rgb(34,29,23);
+    color: white;
+    text-align: right;
+}
+
+#event {
+    display: flex;
+    justify-content: right;
+    align-items: end;
+    height: 100vh;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 10%;
+    padding-left: 5px;
+    padding-right: 5px
+}
+
+.eventcard {
+    background: rgb(34,29,23);
+    color: white;
+    text-align: center;
+}
+
+.temp {
+    margin-bottom: 0;
+    border: none;
+    padding: 0;
+}
+
+.description {
+    text-transform: capitalize;
+    margin-left: 8px;
+    display: inline-block;
+    vertical-align: center;
+}
+
+.weather.loading {
+    visibility: hidden;
+    max-height: 20px;
+    position: relative;
+}
+
+.weather.loading:after {
+    visibility: visible;
+    content: "Loading...";
+    color: white;
+    position: absolute;
+    top: 0;
+    left: 20px;
+}
+
+#order-menu {
+    background-color: rgb(255, 223, 109);
+}
+
+.card-header {
+    background-color: rgb(255, 223, 109);
+}
+
+.nav-link {
+    color: rgb(34,29,23);
+}
+
+.nav-link:hover {
+    color: inherit;
+    background-color: white;
+}
+
+.menucard {
+    border-color: rgb(34,29,23);
+    border-width: 2px;
+}
+
+#cart-header {
+    font-size: 22pt;
+    text-align: right;
+    padding-top: 18px;
+}
+
+#cart {
+    margin-top: 30px;
+}
+
+label {
+    margin-left: 8px;
+}
+
+#cartitems table tr td {
+    padding-left: 20px;
+}
+
+#total {
+    border-top: 2px solid rgb(34,29,23);
+}
+
+#shoppingcart {
+    width: 125px;
+}
+
+.foodbutton {
+    background-color: rgb(255, 223, 109);
+    border: 2px solid rgb(34,29,23);
+    color: rgb(34,29,23);
+}
+
+.orderbutton {
+    background-color: rgb(255, 223, 109);
+    border: 2px solid rgb(34,29,23);
+    color: rgb(34,29,23);
+}
+
+.foodbutton:hover {
+    background-color: rgb(34,29,23);
+    color: white;
+}
+
+.bannerclock {
+    background-color: rgb(34,29,23);
+    color: white;
+    font-family: 'Bebas Neue', cursive;
+    font-size: 16pt;
+    width: 25px;
+    margin-left: 10px;
+    text-align: right;
+}
