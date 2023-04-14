@@ -1,6 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
+        <!--
+      
+            WC4 Team Project
+            Authors: Emma Middleton, Joshua Knutson, Mobin Syed, Johan Elder
+            Date: March 3, 2022
+
+        -->
         <!-- Metadata -->
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,7 +15,7 @@
         <meta name="description" content="Saucy Frites makes classic fast food updated for modern 
             tastes with only the freshest ingredients." />
         <meta name="keywords" content="fries, poutine, vegan, burgers, fresh, foodie, fastfood" />  
-        <title>Home</title>
+        <title>Specials</title>
 
         <!-- Fonts -->
         <link rel="preconnect" href="https://fonts.googleapis.com"> 
@@ -16,14 +23,18 @@
         <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Lato:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
         
         <!-- Style Sheets -->
-        <link href="../styles/reset.css" type="text/css" rel="stylesheet">
+        <link href="/styles/reset.css" type="text/css" rel="stylesheet">
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-        <link href="../styles/styles.css" type="text/css" rel="stylesheet">
-
+        <link href="/styles/styles.css" type="text/css" rel="stylesheet">
+        
         <!-- Scripts -->
-        <script src="../scripts/weather.js" defer></script>
-        <script src="../scripts/countdown.js"></script>
+        <script src="/scripts/weather.js" defer></script>
+        <script src="/scripts/specials.js"></script>
+        <script src="/scripts/countdown.js"></script>
         <script>
+            //create startup() function
+            window.addEventListener('load', populateList);
+            window.addEventListener('load', verifyPhone);
             window.addEventListener('load', setInterval('eventClock()', 1000));
         </script>
         
@@ -35,7 +46,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col-md-6">
-                        <img src="../images/saucyfrites_white.png" id="logo" alt="saucy fries logo image">
+                        <img src="/images/saucyfrites_white.png" id="logo" alt="saucy fries logo image">
                     </div>
                     <div class="col-md-6">
                         <!-- Weather API AJAX/JQUERY-->
@@ -74,62 +85,104 @@
             </div>
         </section>
         
-       <!-- Navbar -->
-       <nav class="navbar navbar-expand-md navbar-light">
+        <!-- Navbar -->
+        <nav class="navbar navbar-expand-md navbar-light">
             <button class="navbar-toggler mx-auto" type="button" data-toggle="collapse" data-target="#links" id="toggler">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="links">
                 <div class="container navbar-nav">
-                    <a href="../en/index.html" class="nav-item nav-link">Home</a>
-                    <a href="../en/about.html" class="nav-item nav-link">About Us</a>
-                    <a href="../en/menu.html" class="nav-item nav-link">Menu</a>
-                    <a href="../en/specials.html" class="nav-item nav-link">Specials</a>
-                    <a href="../en/contact.html" class="nav-item nav-link currentpage">Contact Us</a>
-                    <a href="../en/order.html" class="nav-item nav-link">Order</a>
-                    <a href="../fr/contact.html" class="nav-item nav-link ml-md-auto"><u>EN</u>/FR</a>
+                    <a href="/index.html" class="nav-item nav-link">Home</a>
+                    <a href="/about.html" class="nav-item nav-link">About Us</a>
+                    <a href="/menu.html" class="nav-item nav-link">Menu</a>
+                    <a href="/specials.html" class="nav-item nav-link currentpage">Specials</a>
+                    <a href="/contact.html" class="nav-item nav-link">Contact Us</a>
+                    <a href="/order.html" class="nav-item nav-link">Order</a>
+                    <a href="/fr/specials.html" class="nav-item nav-link ml-md-auto"><u>EN</u>/FR</a>
                 </div>
             </div>
-       </nav>
-        
-        <!-- Content -->
-        <div class="container content">
+        </nav>
 
-            <div class="row">
-                <div class="col">
-                    <h1>Contact Us</h1>
-                </div>
-            </div>
-            <div class="row align-items-center">
-                <div class="col-md-5 ms-5 ps-5 mb-4 mb-md-0">
-                    <h3><b>Saucy Frites</b></h3>
-                    <p>
-                        1234 rue Spud,<br>
-                        Montreal, QC<br>
-                        P0T 4T0
-                    </p>
-                    <h2>Call us for Pickup or Delivery!</h2>
-                    <p>
-                        (514) 728-2972 <br>
-                        (514) SAUCYQC
-                    </p>
-                    <h2>Opening Hours</h2>
-                    <p>
-                        Monday 11:30am - 11pm<br>
-                        Tuesday 11:30am - 11pm<br>
-                        Wednesday 11:30am - 11pm<br>
-                        Thursday 11:30am - 11pm<br>
-                        Friday 11:30am - 1am<br>
-                        Saturday 11:30am - 2am<br>
-                        Sunday 11:30am - 11pm
-                    </p>
-                </div>
-                <div class="col-md-6 mx-auto text-center pe-5">
-                    <img src="../images/potato_phone.png" class="img-fluid" alt="image of a potato wearing a headset next to an office phone"/>
-                    <h3>We're ready to take your order!</h3>
-                </div>
+       <!-- Content -->
+       <div class="container content">
+        <div class="row">
+            <div class="col">
+                <h1>Weekly Specials</h1>
             </div>
         </div>
+        <div class="row align-items-center">
+            <div class="col-md-6">
+                <img src="/images/panini.jpeg" class="img-fluid rounded" alt="image of the interior of the restaurant with tables and counter">
+            </div>
+            <div class="col-md-6 mt-4 mt-md-0">
+                <p>
+                    This weeks special is a grilled panini. This delicious sandwich is made with Montréal bread, fresh tomatoes, spinach and
+                    onions, creamy feta cheese and topped off with our awesome in-house sauce. A great choice for a healthy filling lunch, and with your 
+                    choice of side (fries or green salad), this week it is only <strong>$9.99</strong> for the trio.
+                </p>
+                <p>
+                    If you want to keep up to date on our weekly specials, join our mailing list using the form below:
+                </p>
+                <form>
+                    <table>
+                        <tr>
+                            <th class="input-group-text">First name</th>
+                            <td>
+                                <input id="fName" type="text" aria-label="Default" class="form-control" placeholder="Enter first name">
+                            </td>
+                        </tr>
+                        <tr>
+                            <th class="input-group-text">Last name</th>
+                            <td>
+                                <input id="lName" type="text" aria-label="Default" class="form-control" placeholder="Enter last name">
+                            </td>
+                        </tr>
+                        <tr>
+                            <th class="input-group-text" id="inputGroup-sizing-Email">Email</th>
+                            <td>
+                                <input id="txtEmail" type="email" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-Email" placeholder="Enter email">
+                            </td>
+                        </tr>
+                        <tr>
+                            <th class="input-group-text" id="inputGroup-sizing-Phone">Phone</th>
+                            <td>
+                                <input id="txtPhone" type="tel" class="form-control" aria-label="Default" 
+                                aria-describedby="inputGroup-sizing-Phone" placeholder="514-555-5555" 
+                                pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" required>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th class="input-group-text" abbr="inputGroupSelect01">Province</th>
+                            <td>
+                                <select class="custom-select" id="selectProvince">
+
+                                    <option selected>Select...</option>
+                                    <option value="1" id="prov1">ON</option>
+                                    <option value="2" id="prov2">QC</option>
+                                    <option value="3" id="prov3">SK</option> 
+                                    <option value="4" id="prov4">AB</option>
+                                    <option value="5" id="prov5">BC</option>
+                                    <option value="6" id="prov6">NWT</option>
+                                    <option value="7" id="prov7">YK</option>
+                                    <option value="8" id="prov8">NB</option>
+                                    <option value="9" id="prov9">NS</option>
+                                    <option value="10" id="prov10">PEI</option>
+                                    <option value="11" id="prov11">NU</option>
+                                  <!--"ON", "QC", "SK", "AB", "BC", "NWT", "YK", "NB", "NS", "PEI", "NU"-->
+                                  </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="2">
+                                <input type="checkbox" class="form-check-input" id="exampleCheck1"> Yes, I want to receive your weekly specials
+                            </td>
+                    </table>
+                    <small id="emailHelp" class="form-text text-muted">We'll never share your email or phone number with anyone.</small>
+                    <button id="formSubmit" type="submit" class="btn mt-4" onclick="return validateForm();">Submit</button>
+                  </form>
+            </div>
+        </div>
+    </div>
 
         <!-- Footer -->
         <section id="footer">

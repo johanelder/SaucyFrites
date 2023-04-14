@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+    <html lang="en">
     <head>
         <!--
       
@@ -15,22 +15,27 @@
         <meta name="description" content="Saucy Frites makes classic fast food updated for modern 
             tastes with only the freshest ingredients." />
         <meta name="keywords" content="fries, poutine, vegan, burgers, fresh, foodie, fastfood" />  
-        <title>Home</title>
+        <title>About</title>
 
         <!-- Fonts -->
         <link rel="preconnect" href="https://fonts.googleapis.com"> 
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
         <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Lato:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.gstatic.com">
         <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+        
         <!-- Style Sheets -->
-        <link href="../styles/reset.css" type="text/css" rel="stylesheet">
+        <link href="/styles/reset.css" type="text/css" rel="stylesheet">
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-        <link href="../styles/styles.css" type="text/css" rel="stylesheet">
-        <script src="../scripts/weather.js" defer></script>
-        <script src="../scripts/countdown.js"></script>
+        <link href="/styles/styles.css" type="text/css" rel="stylesheet">
+        
+        <!-- Scripts -->
+        <script src="/scripts/aboutCountdown.js"></script>
         <script>
             window.addEventListener('load', setInterval('eventClock()', 1000));
         </script>
+        <script src="/scripts/weather.js" defer></script>
+        
     </head>
     
     <body>
@@ -39,7 +44,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col-md-6">
-                        <img src="../images/saucyfrites_white.png" id="logo" alt="saucy fries logo image">
+                        <img src="/images/saucyfrites_white.png" id="logo" alt="saucy fries logo image">
                     </div>
                     <div class="col-md-6">
                         <!-- Weather API AJAX/JQUERY-->
@@ -85,13 +90,13 @@
             </button>
             <div class="collapse navbar-collapse" id="links">
                 <div class="container navbar-nav">
-                    <a href="../en/index.html" class="nav-item nav-link currentpage">Home</a>
-                    <a href="../en/about.html" class="nav-item nav-link">About Us</a>
-                    <a href="../en/menu.html" class="nav-item nav-link">Menu</a>
-                    <a href="../en/specials.html" class="nav-item nav-link">Specials</a>
-                    <a href="../en/contact.html" class="nav-item nav-link">Contact Us</a>
-                    <a href="../en/order.html" class="nav-item nav-link">Order</a>
-                    <a href="../fr/accueil.html" class="nav-item nav-link ml-md-auto"><u>EN</u>/FR</a>
+                    <a href="/index.html" class="nav-item nav-link">Home</a>
+                    <a href="/about.html" class="nav-item nav-link currentpage">About Us</a>
+                    <a href="/menu.html" class="nav-item nav-link">Menu</a>
+                    <a href="/specials.html" class="nav-item nav-link">Specials</a>
+                    <a href="/contact.html" class="nav-item nav-link">Contact Us</a>
+                    <a href="/order.html" class="nav-item nav-link">Order</a>
+                    <a href="/fr/apropos.html" class="nav-item nav-link ml-md-auto"><u>EN</u>/FR</a>
                 </div>
             </div>
         </nav>
@@ -100,35 +105,82 @@
         <div class="container content">
             <div class="row">
                 <div class="col">
-                    <h1>Saucy Frites!</h1>
+                    <h1>Our Story</h1>
                 </div>
             </div>
             <div class="row align-items-center">
                 <div class="col-md-6 mx-auto mb-5 mt-2 mb-md-0 mt-md-0">
-                    <img src="../images/poutine1.jpg" class="img-fluid rounded" alt="photo of a poutine">
+                    <img src="/images/resto.jpg" class="img-fluid" alt="image of the interior of the restaurant with tables and counter">
                 </div>
                 <div class="col-md-6">
                     <p>
-                        Saucy frites, taking classic Montréal fast food and updating it for today's 
-                        tastes with only the best, choicest ingredients. Find all of your old favourites spiced up with new
-                        combinations and flavours. We also offer a variety of vegan options as well.
+                        Serving fries with a passion since 2014, Saucy Frites is a Montreal institution. When Maude
+                        Tremblay started her restaurant she knew she had a calling to line the bellies of the rowdy 
+                        drunks pouring out of the many bars on St-Laurent at closing time, but she also knew she 
+                        wanted to make it fancy. That's why Saucy Frites uses nothing but the finest ingredients 
+                        slathered in their trademark sauce on a bed of golden crispy fries. C'est bon!
                     </p>
+                    <p>
+                        Located in the heart of Montreal's trendy Plateau neighbourhood, Saucy Frites invites you
+                        to discover the gourmet possibilities of Quebec's traditional dish. Thank you for supporting
+                        local businesses.
+                    </p>
+                </div>
+            </div>
+
+            <div class="row align-items-center mt-md-5">
+                <div class="col-md-6 mt-4 mt-md-0">
+                    <h1>Second Location!</h1>
+                    <p>
+                        We're bringing Saucy Frites to Vieux Rosemont! We will be opening our doors on 
+                        Saturday May 7th - just in time for patio season! After seven wonderful years in the Plateau, 
+                        we decided it was time to bring our fancy fries to a new neighborhood. We can't wait to welcome
+                        you. 
+                    </p>
+
+                    <form id="clockformAbout" name="clockform" action="#" >
+                        <div id="countdownAbout">
+                            <h3>Countdown to Grand Opening!</h3>
+                            <p>
+                                <input type="text" size="2" id="daysLeft" name="txtDaysLeft" /> Days
+                                <input type="text" size="2" id="hrLeft" name="txtHrLeft" /> Hours
+                                <input type="text" size="2" id="minLeft" name="txtMinLeft" /> Minutes
+                                <input type="text" size="2" id="secLeft" name="txtSecLeft" /> Seconds!
+                            </p>
+                        </div>
+                    </form>
+                </div>
+                <div class="col-md-6 mx-auto mb-5 mt-2 mb-md-0 mt-md-0" >
+                    <div>
+                        <img src="/images/paint.jpg" class="img-fluid" alt="paint roller with yellow paint on white background" />
+                    </div>
                 </div>
             </div>
             <div class="row align-items-center mt-md-5">
-                <div class="col-md-6">
-                    <p>
-                        Whether a student on a budget or someone with a desire for re-imagined classics, we've got something for you. 
-                        Fries in all their forms, a selection of burgers; vegan and not; hot dogs, paninis, something for all tastes, made fresh
-                        and new.
-                    </p>
+                <div class="col">
+                    <h1>Our Partners</h1>
                 </div>
+            </div>
+            <div class="row align-items-center">
                 <div class="col-md-6 mx-auto mt-4 mt-md-0">
-                    <img src="../images/burgernfries.jpeg" class="img-fluid rounded" alt="photo of a plate with hamburger and french fries on it">
+                    <div>
+                        <!-- 16:9 aspect ratio -->
+                        <div class="embed-responsive embed-responsive-16by9">
+                            <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/lWS-veyxGWg" allowfullscreen></iframe>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 mx-auto mt-4 mt-md-0" >
+                    <p>
+                        Supporting Quebec farmers is important to us - that's why we've partnered with Patates Dolbec! 
+                        The folks at Patates Dolbec are just as passionate about potatoes as we are, it's a match made in heaven.
+                        Take a tour of their idyllic farm!
+                    </p>
                 </div>
             </div>
         </div>
-        
+
+
         <!-- Footer -->
         <section id="footer">
             <div class="container">
