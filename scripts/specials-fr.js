@@ -54,14 +54,14 @@ function populateList() {
         else
         // validate email address
         if (emailInput.value === '') {
-            window.alert('SVP entrer un courriel valide');
+            window.alert('SVP entrer une addresse courriel');
             emailInput.focus();
             return false;
         } // end if
         else
         // validate email as correct
     if (!emailRegex.test(emailInput)) {
-      alert('Please enter a valid email address');
+      alert('SVP entrer une addresse courriel valide');
       return false;
     }
     else
